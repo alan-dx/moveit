@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white:#fff;
+    --background: #f2f3f5;
+    --gray-line: #DCDDE0;
+    --text: #666666;
+    --text-highlight: #B3B9FF;
+    --title: #2E384D;
+    --red: #e83f5b;
+    --green: #4CD62B;
+    --blue: #5965E0;
+    --blue-dark: #4953b8;
+    --blue-twitter: #2AA9E0;
+}
+
+@media(max-width: 1888px) {
+    html {
+        /* redefinindo o font-size padrão  */
+        font-size: 93.75%; /* 16px*0.9375 = 15px*/
+    }
+}
+
+@media(max-width: 720px) {
+    html {
+        /* redefinindo o font-size padrão  */
+        font-size: 87.5%; /* 16px*0.875 = 14px*/
+    }
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+}
+
+body, input, textarea, button {
+    /* 1rem = 16px (padrão na web), o rem é 1 unidade do font-size padrão do dispositivo, no caso web é igual a 16px originalmente*/
+    font: 400 1rem "Inter", sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
