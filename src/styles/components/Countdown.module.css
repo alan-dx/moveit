@@ -92,3 +92,8 @@
     bottom: 0;
     left: 0;
 }
+
+.countdownButtonActive:not(:disabled):hover div {
+    background: var(--white);
+    height: 0;
+}
