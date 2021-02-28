@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CountdownContext } from '../contexts/CountdownContext'
 import styles from '../styles/components/Countdown.module.css'
 
@@ -9,6 +9,12 @@ export default function Countdown() {
 
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
     const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
+
+    const [progress, setProgress] = useState(minutes/25) 
+
+    useEffect(() => {
+        setProgress(1 - (minutes / 25))
+    }, [seconds])
 
     return (
         <div>
@@ -41,6 +47,10 @@ export default function Countdown() {
                                 onClick={resetCountdown}
                             >
                                 Abandonar ciclo
+                                <div 
+                                    style={{width: `${progress * 100}%`}} 
+                                    className={`${styles.progressBar}`} 
+                                />
                             </button>
                         ) : (
                             <button 
